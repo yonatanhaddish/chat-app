@@ -16,5 +16,8 @@ const config = {
       backgroundColor: "green",
     },
   },
+  state: {
+    moviesList: ["The lion King", "Spiderman", "Avengers"],
+  },
 };
 export default config;

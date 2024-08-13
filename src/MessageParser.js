@@ -6,8 +6,12 @@ class MessageParser {
   }
 
   parse(message) {
-    console.log(message);
+    const lowerCaseMessage = message.toLowerCase();
+
+    if (lowerCaseMessage.includes("hello")) {
+      console.log("hello");
+      this.actionProvider.handleReplyBot();
+    }
   }
 }
-
 export default MessageParser;
