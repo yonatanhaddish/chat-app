@@ -1,9 +1,14 @@
 // Config starter code
 import { createChatBotMessage } from "react-chatbot-kit";
 import BotAvator from "./component/BotAvator/BotAvator";
+import Todos from "./component/Todos/Todos";
 
 const config = {
-  initialMessages: [createChatBotMessage(`Hello world`)],
+  initialMessages: [
+    createChatBotMessage(`Hello world`, {
+      widget: "todos",
+    }),
+  ],
   botName: "Lion Bot",
   customComponents: {
     botAvatar: (props) => <BotAvator {...props} />,
@@ -17,7 +22,14 @@ const config = {
     },
   },
   state: {
-    moviesList: ["The lion King", "Spiderman", "Avengers"],
+    todos: [],
   },
+  widgets: [
+    {
+      widgetName: "todos",
+      widgetFunc: (props) => <Todos {...props} />,
+      mapStateToProps: ["todos"],
+    },
+  ],
 };
 export default config;

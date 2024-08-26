@@ -8,7 +8,7 @@ class MessageParser {
   parse(message) {
     const lowerCaseMessage = message.toLowerCase();
 
-    if (lowerCaseMessage.includes("hello")) {
+    if (lowerCaseMessage.includes("aa")) {
       console.log("hello");
       this.actionProvider.handleReplyBot();
     }
